@@ -28,7 +28,7 @@ trainSet=dataFinal(45:219,:);
 input=transpose(trainSet(:,2:392));
 output=transpose(trainSet(:,1));
 % % % y=input(1,:);
-% % % histogram(input(7,:));
+% % % histogram(input(7,:))56
 % % % plot(input(1,:), output, ".") 
 net = feedforwardnet([20,20]);
 net.divideParam.testRatio = 0;
