@@ -12,6 +12,11 @@ data3=data3(1:limit,3:233);
 data4=data4(1:limit,3:74);
 data5=[data(2:limit,2:end),data2(2:limit,:),data3(2:limit,:),data4(2:limit,:)];
 dataFinal=[output,data5];
+tic;
+average=mean(dataFinal,1);
+for i=1:464
+    dataFinal(:,i)=dataFinal(:,i)-average(i);
+end
 
 rmse=ones(10);
 for j=1:10
@@ -46,3 +51,4 @@ for j=1:10
     end
     rmse(j)=sqrt(count/44);
 end
+toc;
