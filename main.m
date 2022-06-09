@@ -35,7 +35,7 @@ for j=1:10
     % % % y=input(1,:);
     % % % histogram(input(7,:));
     % % % plot(input(1,:), output, ".") 
-    net = feedforwardnet([20,20]);
+    net = feedforwardnet([10,10]);
     net.divideParam.testRatio = 0;
     net.divideParam.valRatio = 0.2;
     % % net.trainParam.max_fail = 10;
