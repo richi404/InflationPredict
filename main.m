@@ -18,7 +18,7 @@ for i=1:464
     dataFinal(:,i)=dataFinal(:,i)-average(i);
 end
 
-rmse=ones(10);
+rmse=ones([10,1]);
 for j=1:10
     %test set
     rows = limit-1;
@@ -36,6 +36,7 @@ for j=1:10
     % % % histogram(input(7,:));
     % % % plot(input(1,:), output, ".") 
     net = feedforwardnet([10,10]);
+    net.trainParam.showWindow = 0;
     net.divideParam.testRatio = 0;
     net.divideParam.valRatio = 0.2;
     % % net.trainParam.max_fail = 10;
