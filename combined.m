@@ -19,17 +19,17 @@ tic;
 
 mutatProb=0.01;
 pcros=0.1;
-lenpop=20;
+lenpop=100;
 popsize=20;
-maxfind=zeros([1,lenpop]);
-maxvalue=0;
+minfind=zeros([1,lenpop]);
+minvalue=1000000;
 population=zeros([popsize,lenpop]);
 for i=1:popsize
     population(i,:)=randperm(463,lenpop)+1;
 end
 
-fgh=zeros(1000);
-for u=1:1000
+fgh=zeros(100);
+for u=1:100
     %ewaluacja
     evalArray=zeros([popsize,1]);
     for i=1:popsize
@@ -66,10 +66,10 @@ for u=1:1000
         evalArray(i)=mean(rmse(:,1));
     end
     fgh(u)=mean(evalArray);
-    [tmp,idx]=max(evalArray);
-    if tmp>maxvalue
-        maxvalue=tmp;
-        maxfind=population(idx,:);
+    [tmp,idx]=min(evalArray);
+    if tmp<minvalue
+        minvalue=tmp;
+        minfind=population(idx,:);
     end
     disp(fgh(u))
     evalArray=1-evalArray/sum(evalArray);
