@@ -19,8 +19,8 @@ tic;
 
 mutatProb=0.01;
 pcros=0.1;
-lenpop=100;
-popsize=20;
+lenpop=200;
+popsize=30;
 minfind=zeros([1,lenpop]);
 minvalue=1000000;
 population=zeros([popsize,lenpop]);
